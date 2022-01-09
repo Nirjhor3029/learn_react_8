@@ -2,7 +2,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 const LineItem = ({ item, handleCheck, handleDelete }) => {
     return (
-        <li className="item" key={item.id} >
+        <li className="item"  >
             <input type="checkbox" checked={item.checked} id={"item" + item.id} onChange={() => handleCheck(item.id)} />
             <label htmlFor={"item" + item.id} className={(item.checked) ? 'line_through' : ''}>
                 {item.item}

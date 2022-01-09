@@ -6,6 +6,9 @@ iterations:
 
 
 localStorage
+    setItem
+    getItem
+
 ============================================ React ==============================
 Create APP
 JSX
@@ -21,6 +24,11 @@ Events
 React Hooks
     State (State of Component, Re-render the JSX) 
         useState hook (StateLess Function Component)
+    Reference (Dom-Element Reference)   
+        useRef() hook
+    
+    useEffect() hook
+        .current = (DOM Element)
 
 Unique Key (Must needed) for every Item/list into any iteration
 
@@ -35,5 +43,8 @@ Props & Prop Drilling (Parent to Child)
 Reusable Component
 
 
+
+
 ======================================= Learn After ==========
 JSON.stringify();
+JSON.parse();
