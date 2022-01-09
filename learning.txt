@@ -1,0 +1,21 @@
+============================================ Modern JS Topics ============================
+array destructuring 
+
+============================================ React ==============================
+Create APP
+JSX
+Functional Components
+Applying CSS
+Events
+    Click Events
+    Double click Events
+    mouse over
+    mouse out
+    e.t.c 
+
+React Hooks
+    State (State of Component, Re-render the JSX) 
+        useState hook (StateLess Function Component)
+
+Unique Key (Must needed) for every Item/list into any iteration
+
