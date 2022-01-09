@@ -1,8 +1,10 @@
-const Footer = () => {
+const Footer = ({length}) => {
+    const today = new Date();
     return (
-        <div>
-            <p>Copyright 2021</p>
-        </div>
+        <footer>
+            <p>{length} list {(length===1)? "item": "items"}</p>
+            <p style={{fontSize:'10px'}}>Copyright &copy; {today.getFullYear()} </p>
+        </footer>
     )
 }
 
