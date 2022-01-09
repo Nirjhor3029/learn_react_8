@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
-import {  useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AddItem from './AddItem';
 import { Content } from './Content';
 import Footer from './Footer';
@@ -15,12 +15,33 @@ function App() {
   const [items, setItems] = useState(arrayOfItems || []);
   const [newItem, setNewItem] = useState('');
   const [searchItem, setSearchItem] = useState('')
+  const [isLoading, setIsLoading] = useState(true);
+
+  const API_URL = "http://localhost:3500/items";
 
   useEffect(() => {
     console.log("render");
-    localStorage.setItem('shopping_list', JSON.stringify(items));
+    // localStorage.setItem('shopping_list', JSON.stringify(items));
 
-  },[items])
+    const fetchItem = async () => {
+      try {
+        const response = await fetch(API_URL);
+        const listItem = await response.json();
+        console.log(listItem);
+        setItems(listItem);
+      } catch (error) {
+        console.log(error.stack);
+      }finally{
+        setIsLoading(false);
+      }
+    }
+    fetchItem();
+
+    // setTimeout(() => {
+    //   fetchItem();
+    // }, 1000);
+
+  }, [])
 
 
 
@@ -88,11 +109,20 @@ function App() {
         setSearchItem={setSearchItem}
         handleSearch={handleSearch}
       />
-      <Content
-        items={items.filter(item => ((item.item).toLowerCase()).includes(searchItem.toLowerCase()))}
-        handleCheck={handleCheck}
-        handleDelete={handleDelete}
-      />
+      <main>
+        {isLoading && <p>Loading Data .....</p>}
+
+        {
+          !isLoading &&
+          <Content
+            items={items.filter(item => ((item.item).toLowerCase()).includes(searchItem.toLowerCase()))}
+            handleCheck={handleCheck}
+            handleDelete={handleDelete}
+          />
+        }
+
+      </main>
+
 
       <AddItem
         newItem={newItem}
