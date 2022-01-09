@@ -1,6 +1,11 @@
 ============================================ Modern JS Topics ============================
 array destructuring 
+iterations:
+    map, 
+    filter
 
+
+localStorage
 ============================================ React ==============================
 Create APP
 JSX
@@ -19,3 +24,15 @@ React Hooks
 
 Unique Key (Must needed) for every Item/list into any iteration
 
+React-Icons:
+    package: React-Icons (npm)
+    extension: React-Icons Snippets (VS Code)
+
+Props & Prop Drilling (Parent to Child)
+    Default Props
+    sharing (value) with siblings by Parent Component
+    
+
+
+======================================= Learn After ==========
+JSON.stringify();
