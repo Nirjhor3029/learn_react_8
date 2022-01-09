@@ -26,9 +26,15 @@ React Hooks
         useState hook (StateLess Function Component)
     Reference (Dom-Element Reference)   
         useRef() hook
+            .current = (DOM Element)
     
     useEffect() hook
-        .current = (DOM Element)
+        when useEffect runs ()
+            runs after Every DOM element render
+            every time ()
+            on load ([])
+            when dependencies change ([items])
+
 
 Unique Key (Must needed) for every Item/list into any iteration
 

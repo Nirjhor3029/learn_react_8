@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
-import {  useState } from 'react';
+import {  useEffect, useState } from 'react';
 import AddItem from './AddItem';
 import { Content } from './Content';
 import Footer from './Footer';
@@ -12,17 +12,20 @@ import SearchItem from './SearchItem';
 function App() {
   const arrayOfItems = JSON.parse(localStorage.getItem('shopping_list'));
 
-
-  const [items, setItems] = useState(arrayOfItems ? arrayOfItems : []);
+  const [items, setItems] = useState(arrayOfItems || []);
   const [newItem, setNewItem] = useState('');
   const [searchItem, setSearchItem] = useState('')
 
+  useEffect(() => {
+    console.log("render");
+    localStorage.setItem('shopping_list', JSON.stringify(items));
+
+  },[items])
 
 
 
   const setAndSaveItems = (newItems) => {
     setItems(newItems);
-    localStorage.setItem('shopping_list', JSON.stringify(newItems));
   }
 
 
